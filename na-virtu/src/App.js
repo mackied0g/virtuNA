@@ -1,20 +1,32 @@
 import React, { useState } from 'react';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import FooterPage from './FooterPage';
+import NavBar from './NavBar';
 import { Route, Switch } from "react-router";
 import './App.css';
 
 function App() {
   const [currentUser, setCurrentUser] = useState({})
 
+  const logoutUser = event => {
+    event.preventDefault()
+    window.FB.logout()
+  }
+
   return (
     <div className="App">
-      Welcome, {currentUser.username}
-      <a href="#" onClick={(e)=>{e.preventDefault(); window.FB.logout()}}>logout</a>
+      <NavBar />
+      {
+        currentUser.username ?
+        <a href="#" onClick={logoutUser}>Logout</a>
+        :
+        <Login setCurrentUser={setCurrentUser} />
+      }
       <Switch>
-        <Route path='/login' render={() => <Login setCurrentUser={setCurrentUser} /> }/>
-        <Route path='/' component={Home} />
+        <Route path='/home' render={renderProps => <Home currentUser={currentUser} {...renderProps} /> }/>
       </Switch>
+      <FooterPage />
     </div>
   );
 }
