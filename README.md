@@ -6,4 +6,4 @@ Currently, we are using:
 
 - Node.js (10.15.2)
 - React.js (16.9.0)
-- WebSockets 
+- WebSockets (1.0.30)
