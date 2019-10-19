@@ -6,6 +6,7 @@ const io = require('socket.io')(http);
 // Importing Models
 const User = require('./models/User');
 const Group = require('./models/Group');
+const Meeting = require('./models/Meeting');
 
 // For logging
 const logger = require('morgan');
@@ -17,9 +18,10 @@ app.get('/', function(req, res) {
 
 // For testing User database
 app.get('/users', User.readAll);
-
 // For testing Group database
 app.get('/groups', Group.readAll);
+// For testing Group database
+app.get('/meetings', Meeting.readAll);
 
 io.sockets.on('connection', function(socket) {
     socket.on('username', function(username) {
