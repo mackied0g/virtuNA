@@ -3,8 +3,9 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-// Importing User Model
+// Importing Models
 const User = require('./models/User');
+const Group = require('./models/Group');
 
 // For logging
 const logger = require('morgan');
@@ -14,9 +15,11 @@ app.get('/', function(req, res) {
     res.render('index.ejs');
 });
 
-
+// For testing User database
 app.get('/users', User.readAll);
 
+// For testing Group database
+app.get('/groups', Group.readAll);
 
 io.sockets.on('connection', function(socket) {
     socket.on('username', function(username) {
