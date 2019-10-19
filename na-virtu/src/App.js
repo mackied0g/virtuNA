@@ -12,7 +12,7 @@ import { Route, Switch } from "react-router";
 import './App.css';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({})
+  const [ currentUser, setCurrentUser ] = useState({})
 
   const logoutUser = event => {
     event.preventDefault()
