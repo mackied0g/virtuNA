@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Home } from './Home';
-import { MoreInfo } from './MoreInfo';
-import { Login } from './Login';
-import { Virtual } from './Virtual';
-import { Physical } from './Physical';
+import { Home } from './pages/Home';
+import { MoreInfo } from './pages/MoreInfo';
+import { Login } from './pages/Login';
+import { Virtual } from './pages/Virtual';
+import { Physical } from './pages/Physical';
 
 class NavBar extends Component {
   render() {
