@@ -1,10 +1,9 @@
 {
-  "name": "real_time_chat",
+  "name": "virtu-na",
   "version": "1.0.0",
   "description": "Group chat using Nodejs and socket",
   "main": "index.js",
   "dependencies": {
-
     "bluebird": "^3.7.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
