@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
 import $ from 'jquery'; 
+import './ChatPage.css';
 
 class ChatPage extends Component {
   constructor() {
@@ -59,12 +60,12 @@ class ChatPage extends Component {
     const socket = socketIOClient(this.state.endpoint);
 
     return (
-      <div style={{ padding:"20px", fontSize:"16px" }}>
+      <div className="ChatBody" style={{padding:"20px",fontSize:"16px" }}>
         <p id="messages"></p>
             <form action="/" method="POST" id="chatForm">
-             
-                    <input style={{width:"100%", height:"20px"}} id="txt" autoComplete="off" autoFocus="on" placeholder="type your message here..." />
-                    <p><button style={{fontSize:"16px", color:"black", width:"100%", height:"40px", backgroundColor:"#83A8BF", border:"0"}}>Send</button></p>
+        
+                <input className="ChatInput" style={{width:"100%",height:"20px"}} id="txt" autoComplete="off" autoFocus="on" placeholder="type your message here..." />
+                <p><button className="ButtonSend" style={{fontSize:"16px", color:"black", width:"100%", height:"40px", backgroundColor:"#83A8BF", border:"0"}}>Send</button></p>
             </form>
       </div>
     )

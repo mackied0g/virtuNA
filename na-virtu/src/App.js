@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import FooterPage from './FooterPage';
-import NavBar from './NavBar';
-
 import Login from './pages/Login';
 import Home from './pages/Home';
 import MoreInfo from './pages/MoreInfo';
@@ -12,6 +10,7 @@ import { Route, Switch } from "react-router";
 import './App.css';
 
 function App() {
+
   const [ currentUser, setCurrentUser ] = useState({})
 
   const logoutUser = event => {
