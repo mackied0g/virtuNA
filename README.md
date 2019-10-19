@@ -1,7 +1,9 @@
 # virtuNA
 
+virtu-NA, or Virtual NA, is an open source web app to increase the accessibility and retention of Narcotics Anonymous. 
 
+Currently, we are using:
 
-https://github.com/websockets/ws
-
-https://itnext.io/build-a-group-chat-app-in-30-lines-using-node-js-15bfe7a2417b
+- Node.js (10.15.2)
+- React.js (16.9.0)
+- WebSockets 
