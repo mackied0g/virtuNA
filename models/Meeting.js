@@ -4,11 +4,13 @@ const database = require('../database');
 const Meeting = database.define(
   'meetings',
   {
-    group_id: {
-      type: Sequelize.INTEGER
+    groupId: {
+      type: Sequelize.INTEGER,
+       field: 'group_id'
     },
-    date_time: {
-      type: Sequelize.DATE
+    dateTime: {
+      type: Sequelize.DATE,
+      field: 'date_time'
     },
     location: {
       type: Sequelize.TEXT

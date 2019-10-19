@@ -9,7 +9,10 @@ const Login = ({setCurrentUser}) => {
     // Send backend fetch to get user
     fetch(`http://localhost:8080/users/${fb_id}`)
     .then(res => res.json())
-    .then(user => setCurrentUser(user))
+    .then(user => {
+      // if a new user comes, we should have them signup
+      setCurrentUser(user)
+    })
   }
 
   const componentClicked = () => {
@@ -19,7 +22,7 @@ const Login = ({setCurrentUser}) => {
   return (
     <FacebookLogin
       appId="2370975983213610"
-      autoLoad={false}
+      autoLoad={true}
       fields="name,email,picture"
       onClick={componentClicked}
       callback={responseFacebook} />
