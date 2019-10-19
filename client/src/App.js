@@ -1,7 +1,7 @@
-// Updated. Thanks to: Paul Luna
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
 import $ from 'jquery'; 
+// Updated. Thanks to: Paul Luna
 
 class App extends Component {
   constructor() {
@@ -62,7 +62,7 @@ class App extends Component {
       <div style={{ padding:"20px", fontSize:"16px" }}>
         <p id="messages"></p>
             <form action="/" method="POST" id="chatForm">
-             
+
                     <input style={{width:"100%", height:"20px"}} id="txt" autoComplete="off" autoFocus="on" placeholder="type your message here..." />
                     <p><button style={{fontSize:"16px", color:"black", width:"100%", height:"40px", backgroundColor:"#83A8BF", border:"0"}}>Send</button></p>
             </form>
