@@ -1,7 +1,7 @@
 // Updated. Thanks to: Paul Luna
 import React, { Component } from "react";
 import socketIOClient from "socket.io-client";
-import $ from 'jquery'; 
+import $ from 'jquery';
 import './ChatPage.css';
 
 class ChatPage extends Component {
@@ -10,9 +10,9 @@ class ChatPage extends Component {
     this.state = {
       endpoint: "localhost:4001",
       color: 'white',
+      username:""
 
     };
-    let username = "";
   }
 
   // sending sockets
@@ -51,6 +51,8 @@ class ChatPage extends Component {
             });
             // ask username
             let username = prompt('Please tell me your name');
+            this.setState({username:username});
+
             socket.emit('username', username);
   }
 
@@ -63,7 +65,7 @@ class ChatPage extends Component {
       <div className="ChatBody" style={{padding:"20px",fontSize:"16px" }}>
         <p id="messages"></p>
             <form action="/" method="POST" id="chatForm">
-        
+
                 <input className="ChatInput" style={{width:"100%",height:"20px"}} id="txt" autoComplete="off" autoFocus="on" placeholder="type your message here..." />
                 <p><button className="ButtonSend" style={{fontSize:"16px", color:"black", width:"100%", height:"40px", backgroundColor:"#83A8BF", border:"0"}}>Send</button></p>
             </form>

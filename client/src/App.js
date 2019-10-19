@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import socketIOClient from "socket.io-client";
-import $ from 'jquery'; 
+import $ from 'jquery';
 
 // Updated. Thanks to: Paul Luna
 
@@ -26,14 +26,15 @@ function App() {
           {/* <ChatPage/> */}
           {
             currentUser.username ?
-            <a href="#" onClick={logoutUser}>Logout</a>
+            null
             :
-            <Login setCurrentUser={setCurrentUser} />
+            <Route render={renderProps => <Login setCurrentUser={setCurrentUser} {...renderProps} />} />
           }
           <Switch>
-            <Route path='../Home/Home' render={renderProps => <Home currentUser={currentUser} {...renderProps} /> }/>
+            <Route path='/chatroom' component={ChatPage} />
+            <Route path='/home' render={renderProps => <Home currentUser={currentUser} {...renderProps} /> }/>
           </Switch>
-        
+
       </div>
     );
   }

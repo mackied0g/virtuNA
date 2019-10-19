@@ -1,7 +1,7 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
 
-const Login = ({setCurrentUser}) => {
+const Login = ({setCurrentUser, history}) => {
 
   const responseFacebook = (response) => {
     // console.log(response);
@@ -12,6 +12,7 @@ const Login = ({setCurrentUser}) => {
     .then(user => {
       // if a new user comes, we should have them signup
       setCurrentUser(user)
+      history.push('/home')
     })
   }
 
@@ -22,7 +23,7 @@ const Login = ({setCurrentUser}) => {
   return (
     <FacebookLogin
       appId="2370975983213610"
-      autoLoad={true}
+      autoLoad={false}
       fields="name,email,picture"
       onClick={componentClicked}
       callback={responseFacebook} />
