@@ -35,4 +35,13 @@ User.readAll = async (req, res) => {
   }
 };
 
+User.findByFb = async (req, res) => {
+  try {
+    const user = await User.findOne({ where: {fb_id: req.params.fb_id} });
+    return res.send( user );
+  } catch (error) {
+    return res.send(error);
+  }
+};
+
 module.exports = User;
