@@ -1,37 +1,43 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import socketIOClient from "socket.io-client";
 import $ from 'jquery'; 
 
 // Updated. Thanks to: Paul Luna
 
 import './App.css';
+
+import Login from './Login/Login';
+import Home from './Home/Home';
+import { Route, Switch } from "react-router";
 import ChatPage from "./ChatPage/ChatPage";
 
 
 function App() {
+  const [ currentUser, setCurrentUser ] = useState({})
+
+  const logoutUser = event => {
+    event.preventDefault()
+    window.FB.logout()
+  }
     return (
 
       <div className="App">
 
           {/* <ChatPage/> */}
-
-      <div style={{ padding:"20px", fontSize:"16px" }}>
-        <p id="messages"></p>
-            <form action="/" method="POST" id="chatForm">
-
-                    <input style={{width:"100%", height:"20px"}} id="txt" autoComplete="off" autoFocus="on" placeholder="type your message here..." />
-                    <p><button style={{fontSize:"16px", color:"black", width:"100%", height:"40px", backgroundColor:"#83A8BF", border:"0"}}>Send</button></p>
-            </form>
-
-      <div className="App">
-          <ChatPage/>
-
-
+          {
+            currentUser.username ?
+            <a href="#" onClick={logoutUser}>Logout</a>
+            :
+            <Login setCurrentUser={setCurrentUser} />
+          }
+          <Switch>
+            <Route path='../Home/Home' render={renderProps => <Home currentUser={currentUser} {...renderProps} /> }/>
+          </Switch>
+        
       </div>
     );
   }
 
-}
 
 
 export default App;
