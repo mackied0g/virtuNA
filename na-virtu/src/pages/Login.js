@@ -3,7 +3,7 @@ import FacebookLogin from 'react-facebook-login';
 
 const Login = () => {
 
-  const test = () => {
+  const clickHandler = () => {
     console.log("Hello!")
   }
 
@@ -18,7 +18,7 @@ const Login = () => {
       appId="2370975983213610"
       autoLoad={true}
       fields="name,email,picture"
-      onClick={test}
+      onClick={clickHandler}
       callback={responseFacebook} />
     </div>
   );
