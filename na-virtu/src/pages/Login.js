@@ -12,15 +12,12 @@ const Login = () => {
   }
 
   return (
-    <div>
-    Hello
     <FacebookLogin
       appId="2370975983213610"
       autoLoad={true}
       fields="name,email,picture"
       onClick={clickHandler}
       callback={responseFacebook} />
-    </div>
   );
 
 }

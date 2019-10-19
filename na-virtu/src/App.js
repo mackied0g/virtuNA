@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import Login from './pages/Login';
+import { Route, Switch } from "react-router";
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Switch>
+        <Route path='/login' component={Login} />
+      </Switch>
     </div>
   );
 }
