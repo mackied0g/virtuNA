@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Home extends Component {
-  render() {
-    return (
-      <div>
-        virtu-NA.
-      </div>
-    )
-  }
-}
+const Home = ({currentUser}) => (
+  <div>
+    Home Page
+    <br/>
+    {currentUser.username && `Welcome, ${currentUser.username}.`}
+
+    
+  </div>
+);
+
 export default Home;
-
