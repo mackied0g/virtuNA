@@ -8,6 +8,10 @@ const User = require('./models/User');
 const Group = require('./models/Group');
 const Meeting = require('./models/Meeting');
 
+// For cors
+const cors = require('cors');
+app.use(cors())
+
 // For logging
 const logger = require('morgan');
 app.use(logger('dev'))
@@ -18,6 +22,7 @@ app.get('/', function(req, res) {
 
 // For testing User database
 app.get('/users', User.readAll);
+app.get('/users/:fb_id', User.findByFb)
 // For testing Group database
 app.get('/groups', Group.readAll);
 // For testing Group database
