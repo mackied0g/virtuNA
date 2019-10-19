@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-import Login from './pages/Login';
-import Home from './pages/Home';
 import FooterPage from './FooterPage';
 import NavBar from './NavBar';
+
+import Login from './pages/Login';
+import Home from './pages/Home';
+import MoreInfo from './pages/MoreInfo';
+import Virtual from './pages/Virtual';
+import Physical from './pages/Physical';
+
 import { Route, Switch } from "react-router";
 import './App.css';
 
