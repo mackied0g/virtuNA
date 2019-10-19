@@ -1,11 +1,25 @@
 import React from 'react';
+import FacebookLogin from 'react-facebook-login';
 
 const Login = () => {
+
+  const test = () => {
+    console.log("Hello!")
+  }
+
+  const responseFacebook = (response) => {
+    console.log(response);
+  }
 
   return (
     <div>
     Hello
-    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with" data-auto-logout-link="true" data-use-continue-as="false"></div>
+    <FacebookLogin
+      appId="2370975983213610"
+      autoLoad={true}
+      fields="name,email,picture"
+      onClick={test}
+      callback={responseFacebook} />
     </div>
   );
 
