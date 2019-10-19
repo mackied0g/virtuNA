@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Home = ({currentUser}) => {
   console.log(currentUser);
 
@@ -14,7 +15,6 @@ const Home = ({currentUser}) => {
       {`Welcome, ${currentUser.username}.`}
       </h1>
       <h3>Your group: {group.name}</h3>
-      <p>{group.description}</p>
       <br/>
       <h3>Your Upcoming Meetings:</h3>
       <ul>

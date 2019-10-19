@@ -1,12 +1,16 @@
 import React, { Component, useState } from "react";
 import socketIOClient from "socket.io-client";
 import $ from 'jquery'; 
+
+// Updated. Thanks to: Paul Luna
+
 import './App.css';
 
 import Login from './Login/Login';
 import Home from './Home/Home';
 import { Route, Switch } from "react-router";
 import ChatPage from "./ChatPage/ChatPage";
+
 
 function App() {
   const [ currentUser, setCurrentUser ] = useState({})
@@ -35,5 +39,5 @@ function App() {
   }
 
 
-export default App;
 
+export default App;
