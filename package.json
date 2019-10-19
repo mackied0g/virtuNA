@@ -1,4 +1,5 @@
 {
+
   "name": "real_time_chat",
   "version": "1.0.0",
   "description": "Group chat using Nodejs and socket",
@@ -30,4 +31,9 @@
     "url": "https://github.com/dkhd/node-group-chat/issues"
   },
   "homepage": "https://github.com/dkhd/node-group-chat#readme"
+=======
+  "dependencies": {
+    "react-facebook-login": "^4.1.1"
+  }
+
 }
