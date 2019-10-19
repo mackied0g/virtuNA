@@ -8,7 +8,7 @@ import ChatPage from "./ChatPage/ChatPage";
 function App() {
     return (
       <div className="App">
-          {/* <ChatPage/> */}
+          <ChatPage/>
       </div>
     );
   }
