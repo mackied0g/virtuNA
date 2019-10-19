@@ -1,18 +1,19 @@
 {
-
   "name": "real_time_chat",
   "version": "1.0.0",
   "description": "Group chat using Nodejs and socket",
   "main": "index.js",
   "dependencies": {
+
     "bluebird": "^3.7.1",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "ejs": "^2.7.1",
     "express": "^4.17.1",
-    "express-session": "^1.17.0",
-    "mongoose": "^5.7.5",
-    "pusher": "^3.0.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.12.1",
+    "react-facebook-login": "^4.1.1",
+    "sequelize": "^5.21.1",
     "socket.io": "^2.3.0"
   },
   "devDependencies": {},
@@ -32,9 +33,4 @@
     "url": "https://github.com/dkhd/node-group-chat/issues"
   },
   "homepage": "https://github.com/dkhd/node-group-chat#readme"
-=======
-  "dependencies": {
-    "react-facebook-login": "^4.1.1"
-  }
-
 }
