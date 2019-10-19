@@ -3,9 +3,20 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
+// Importing User Model
+const User = require('./models/User');
+
+// For logging
+const logger = require('morgan');
+app.use(logger('dev'))
+
 app.get('/', function(req, res) {
     res.render('index.ejs');
 });
+
+
+app.get('/users', User.readAll);
+
 
 io.sockets.on('connection', function(socket) {
     socket.on('username', function(username) {
