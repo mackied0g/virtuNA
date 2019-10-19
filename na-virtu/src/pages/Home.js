@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const Home = ({currentUser}) => {
   console.log(currentUser);
 
@@ -23,5 +24,16 @@ const Home = ({currentUser}) => {
     );
   }
 }
+
+const Home = ({currentUser}) => (
+  <div>
+    Home Page
+    <br/>
+    {currentUser.username && `Welcome, ${currentUser.username}.`}
+
+    
+  </div>
+);
+
 
 export default Home;
