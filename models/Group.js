@@ -1,4 +1,6 @@
 const Sequelize = require('sequelize');
+const User = require('./User')
+const Meeting = require('./Meeting')
 const database = require('../database');
 
 const Group = database.define(
@@ -10,8 +12,9 @@ const Group = database.define(
     description: {
       type: Sequelize.TEXT
     },
-    max_count: {
-      type: Sequelize.INTEGER
+    maxCount: {
+      type: Sequelize.INTEGER,
+      field: 'max_count'
     }
   },
   { timestamps: false }

@@ -7,6 +7,14 @@ const io = require('socket.io')(http);
 const User = require('./models/User');
 const Group = require('./models/Group');
 const Meeting = require('./models/Meeting');
+User.belongsTo(Group)
+Group.hasMany(User)
+Group.hasMany(Meeting)
+Meeting.belongsTo(Group)
+
+// For cors
+const cors = require('cors');
+app.use(cors())
 
 // For logging
 const logger = require('morgan');
@@ -18,6 +26,7 @@ app.get('/', function(req, res) {
 
 // For testing User database
 app.get('/users', User.readAll);
+app.get('/users/:fb_id', User.findByFb)
 // For testing Group database
 app.get('/groups', Group.readAll);
 // For testing Group database
@@ -26,11 +35,11 @@ app.get('/meetings', Meeting.readAll);
 io.sockets.on('connection', function(socket) {
     socket.on('username', function(username) {
         socket.username = username;
-        io.emit('is_online', '🔵 <i>' + socket.username + ' joined the chat..</i>');
+        io.emit('is_online', '🔵 <i>' + socket.username + ' joined the chat.</i>');
     });
 
     socket.on('disconnect', function(username) {
-        io.emit('is_online', '🔴 <i>' + socket.username + ' lefted the chat..</i>');
+        io.emit('is_online', '🔴 <i>' + socket.username + ' left the chat.</i>');
     })
 
     socket.on('chat_message', function(message) {
