@@ -11,6 +11,10 @@ import ChatPage from "./ChatPage/ChatPage";
 function App() {
     return (
 
+      <div className="App">
+
+          {/* <ChatPage/> */}
+
       <div style={{ padding:"20px", fontSize:"16px" }}>
         <p id="messages"></p>
             <form action="/" method="POST" id="chatForm">
@@ -22,13 +26,12 @@ function App() {
       <div className="App">
           <ChatPage/>
 
+
       </div>
     );
   }
 
 }
+
+
 export default App;
-
-  
-  export default App;
-
