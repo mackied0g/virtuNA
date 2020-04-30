@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-eslint": "^10.0.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-facebook-login": "^4.1.1",
